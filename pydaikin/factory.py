@@ -33,7 +33,11 @@ class DaikinFactory:  # pylint: disable=too-few-public-methods
     ) -> None:
         """Factory to init the corresponding Daikin class."""
 
-        if password is not None:
+        if adapter == "BRP084C":
+            raise DaikinException(
+                f"Error creating device BRP084C, {device_id} is not supported."
+            )
+        elif password is not None:
             self._generated_object = DaikinSkyFi(device_id, session, password=password)
         elif key is not None:
             self._generated_object = DaikinBRP072C(
