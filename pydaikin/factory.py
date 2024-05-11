@@ -28,6 +28,7 @@ class DaikinFactory:  # pylint: disable=too-few-public-methods
         session: Optional[ClientSession] = None,
         password: str = None,
         key: str = None,
+        adapter: str = None,
         **kwargs,
     ) -> None:
         """Factory to init the corresponding Daikin class."""
