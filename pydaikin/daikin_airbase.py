@@ -66,6 +66,7 @@ class DaikinAirBase(DaikinBRP069):
 
     async def init(self):
         """Init status and set defaults."""
+        raise DaikinException("Empty values. Add New") # Need to remove
         await super().init()
         if not self.values:
             raise DaikinException("Empty values. Add New")
