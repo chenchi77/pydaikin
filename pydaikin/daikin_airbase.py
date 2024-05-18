@@ -68,7 +68,7 @@ class DaikinAirBase(DaikinBRP069):
         """Init status and set defaults."""
         await super().init()
         if not self.values:
-            raise DaikinException("Empty values.")
+            raise DaikinException("Empty values. Add New")
         self.values.update({**self.DEFAULTS, **self.values})
 
     async def _get_resource(self, path: str, params: Optional[dict] = None):
