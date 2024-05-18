@@ -78,6 +78,7 @@ class Appliance(DaikinPowerMixin):  # pylint: disable=too-many-public-methods
         if device_ip is None:
             # id is a common name, try discovery
             device_name = get_name(device_id)
+            _LOGGER.log(logging.NOTSET, f'Device ID: {device_id}, Device Name: {device_name}')
             if device_name is None:
                 # try DNS
                 try:
